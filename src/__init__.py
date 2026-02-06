@@ -1,6 +1,6 @@
 from flask import Flask
 from .config import Config
-from .routes import auth_bp, product_bp
+from .routes import auth_bp, product_bp, order_bp
 from .cli.product_seed_cli import product_seed
 
 def createApp():
@@ -10,5 +10,6 @@ def createApp():
     
     app.register_blueprint(auth_bp)
     app.register_blueprint(product_bp)
+    app.register_blueprint(order_bp)
     
     return app

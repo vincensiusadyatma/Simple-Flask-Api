@@ -8,6 +8,8 @@ from alembic import context
 from src.config import Base
 from src.models.User import User 
 from src.models.Product import Product
+from src.models.Order import Order
+from src.models.OrderItem import OrderItem
 
 target_metadata = Base.metadata
 
