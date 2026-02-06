@@ -42,5 +42,9 @@ def register():
      else:
           return jsonify({
                "status": "success",
-               "data": result
+               "data": {
+                    "username" : result.username,
+                    "fullname" : result.fullname,
+                    "email" : result.email
+               }
           }), 201

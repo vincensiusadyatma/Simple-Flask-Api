@@ -8,11 +8,11 @@ class AuthRepository :
     
     def createUser(self,username:str, fullname:str,email:str,password:str):
         user = User(username=username, fullname=fullname, email=email, password=password)
-        print(username)
+       
         self.session.add(user)
         self.session.commit()
        
         return user
     
     def getUserByEmail(self,email:str):
-        return self.session.execute(select(User).where(User.email == email))
+        return self.session.execute(select(User).where(User.email == email)).scalar_one_or_none()
