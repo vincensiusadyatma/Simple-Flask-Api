@@ -7,6 +7,7 @@ from alembic import context
 
 from src.config import Base
 from src.models.User import User 
+from src.models.Product import Product
 
 target_metadata = Base.metadata
 
