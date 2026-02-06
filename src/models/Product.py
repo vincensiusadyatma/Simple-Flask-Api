@@ -9,3 +9,12 @@ class Product(Base):
     description = Column(Text, nullable=True)
     stock = Column(Integer, nullable=False, default=0)
     price = Column(Numeric(10, 2), nullable=False)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,
+            "stock": self.stock,
+            "price": float(self.price)  
+        }

@@ -1,1 +1,2 @@
 from .authRepository import AuthRepository
+from .productRepository import ProductRepository
