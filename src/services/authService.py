@@ -1,5 +1,5 @@
 from ..repositories import AuthRepository
-
+from ..utils import createToken
 class AuthService:
     def __init__(self):
         self.repo = AuthRepository()
@@ -8,6 +8,7 @@ class AuthService:
         try:
             print(username)
             self.repo.createUser(username=username, fullname=fullname, email=email, password=password)
+            print(createToken(username,email))
         except Exception as e:
             print(e)
-        # end try
+       

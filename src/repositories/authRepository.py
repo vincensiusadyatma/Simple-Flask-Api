@@ -1,5 +1,6 @@
 from ..config import Session
 from ..models import User
+from sqlalchemy import select
 
 class AuthRepository :
     def __init__(self):
@@ -12,3 +13,6 @@ class AuthRepository :
         self.session.commit()
        
         return user
+    
+    def getUserByEmail(self,email:str):
+        return self.session.execute(select(User).where(User.email == email))
