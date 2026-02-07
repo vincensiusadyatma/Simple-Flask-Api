@@ -13,3 +13,4 @@ class Config():
     DEBUG = os.getenv("APP_DEBUG")
     PORT = os.getenv("PORT")
     DB_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    SECRET = os.getenv("SECRET_KEY")
