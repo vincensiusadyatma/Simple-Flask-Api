@@ -64,8 +64,14 @@ flask seed
 python app.py
 ```
 
+
 ## API Endpoints Documentation
 ---
+### Authentication Header
+For all endpoints except `/register`, a Bearer token is required:
+
+Authorization: Bearer JWT_TOKEN
+
 
 ## Authentication
 
@@ -122,7 +128,7 @@ python app.py
   }
 }
 ```
-> **Note:** Use the returned token as a Bearer token for authenticated requests:
+> **Note:** Use the returned token as a Bearer token for login requests:
 ```
 Authorization: Bearer JWT_TOKEN
 ```
@@ -131,7 +137,10 @@ Authorization: Bearer JWT_TOKEN
 
 ## Users Endpoints
 
-> All User endpoints require Bearer token authentication.
+> **Note:** Use the returned token as a Bearer token for user endpoints:
+```
+Authorization: Bearer JWT_TOKEN
+```
 
 ### List Users
 ```
@@ -224,9 +233,12 @@ DELETE /users/<user_id>
 
 ---
 
-## Products Endpoints
+## Product Endpoints
 
-> All Product endpoints require Bearer token authentication.
+> **Note:** Use the returned token as a Bearer token for product endpoints:
+```
+Authorization: Bearer JWT_TOKEN
+```
 
 ### List Products
 ```
@@ -324,7 +336,10 @@ DELETE /product/<product_id>
 
 ## Orders Endpoints
 
-> All Order endpoints require Bearer token authentication.
+> **Note:** Use the returned token as a Bearer token for order endpoints:
+```
+Authorization: Bearer JWT_TOKEN
+```
 
 ### List Orders
 ```
@@ -437,7 +452,7 @@ DELETE /order/<order_id>
 
 ---
 
-## Authorization Header Example
+## Authorization Header 
 For endpoints requiring authentication:
 ```
 GET /order
