@@ -2,7 +2,69 @@
 
 This project is a simple **Flask REST API** with CRUD operations for **Users, Products, Orders**
 
+## Setup & Run
 
+## 1. Create Virtual Environment
+```bash
+python -m venv .venv
+```
+Activate the virtual environment:
+- **Windows (CMD):** `.venv\Scripts\activate`
+- **Windows (PowerShell):** `.\.venv\Scripts\Activate.ps1`
+- **macOS / Linux:** `source .venv/bin/activate`
+
+## 3. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+## 4. Configure Environment
+- Copy the example env file to `.env`:
+```bash
+cp env.example .env
+```
+- Edit `.env` with your configuration, for example:
+```
+APP_DEBUG = true
+PORT = <your flask port>
+DB_USER=<your database username>
+DB_PASSWORD=<your database password>
+DB_HOST=<your database host>
+DB_PORT=<your database port>
+DB_NAME=<your database name>
+SECRET_KEY=<your jwt secret key>
+```
+
+## 5. Setup MySQL Database
+- Make sure MySQL is installed and running.
+- Login to MySQL CLI:
+```bash
+mysql -u <database username> -p <database password>
+```
+- Create database if it does not exist:
+```sql
+CREATE DATABASE <your database name>;
+```
+
+## 6. Run Database Migration
+```bash
+alembic upgrade head
+```
+> This will create all tables in the database according to the models.
+
+## 7. Seed Initial Data
+```bash
+flask seed
+```
+> This will populate initial product data but just for testing.
+
+## 8. Run Flask App
+```bash
+python app.py
+```
+
+## API Endpoints Documentation
 ---
 
 ## Authentication
