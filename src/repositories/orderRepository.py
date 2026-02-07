@@ -78,13 +78,11 @@ class OrderRepository:
             if not order:
                 return None
 
-            # Update fields
             if "customer_name" in update_data:
                 order.customer_name = update_data["customer_name"]
             if "status" in update_data:
                 order.status = update_data["status"]
 
-            # Update items
             if "items" in update_data:
                 new_items = update_data["items"]
                 existing_items_dict = {item.product_id: item for item in order.items}
